@@ -1,4 +1,4 @@
-var accountSid = 'AC94a6219c927c9ce9ea270489f03c7070'; //My SID ss
+var accountSid = 'AC94a6219c927c9ce9ea270489f03c7070'; //My SID ss qsd
 var authToken = '3410bf1a4fa97bffca6beb01d0b77338';
 
 var twilio = require('twilio');
