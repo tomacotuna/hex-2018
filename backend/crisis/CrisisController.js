@@ -4,7 +4,6 @@ var bodyParser = require('body-parser');
 
 var request = require('request');
 
-
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 var Crisis = require('./Crisis');
