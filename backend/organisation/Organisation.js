@@ -1,4 +1,5 @@
 var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
 var OrganisationSchema = new mongoose.Schema({
   name: String,
@@ -8,7 +9,11 @@ var OrganisationSchema = new mongoose.Schema({
     phone: String
   },
   dateJoined: Date,
-  premium: Boolean
+  premium: Boolean,
+  posts: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Post'
+  }]
 });
 
 mongoose.model('Organisation', OrganisationSchema);

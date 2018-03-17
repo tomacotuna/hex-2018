@@ -13,7 +13,6 @@ var UserSchema = new mongoose.Schema({
   organisations: [String],
   countries: [String],
   skills: [String],
-
   crisisAvailable: Boolean,
 });
 mongoose.model('User', UserSchema);

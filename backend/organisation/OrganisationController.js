@@ -2,10 +2,11 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 
+
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 var Organisation = require('./Organisation');
-
+var Post = require('../post/Post');
 //CREATES A NEW ORGANISATION
 router.post("/", function(req,res){
   Organisation.create({
@@ -55,6 +56,21 @@ router.get('/', function (req, res) {
           if (err) return res.status(500).send("There was a problem updating the organisation.");
           res.status(200).send(organisation);
       });
+  });
+
+  //Add a post to an organisation
+  router.post('/:id/post', function(req,res){
+    Post.create({
+      author: req.query.id,
+      title: req.body.title,
+      text: req.body.text
+    },(err,post) => {
+      if (err) return res.status(500).send("There was a problem adding the information to the database.");
+      Organisation.findByIdAndUpdate({_id: post.author}, {$push: {posts: post}}, function(err,organisation){
+        if(err) return res.status(500).send("There was a problem returning the organisation.")
+        res.status(200).send(organisation);
+      })
+    })
   });
 
 module.exports = router;
