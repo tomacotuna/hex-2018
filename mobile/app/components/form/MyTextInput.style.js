@@ -12,6 +12,9 @@ export default StyleSheet.create({
     borderColor: colors.primary,
     marginTop: 10
   },
+  checkboxInputContainer: {
+    marginTop: 10
+  },
   valid: {
     borderColor: colors.success
   },

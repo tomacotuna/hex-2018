@@ -5755,7 +5755,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@15.x, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1:
+prop-types@15.x, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
   dependencies:
@@ -6022,6 +6022,12 @@ react-native-branch@2.0.0-beta.3:
 react-native-camera-roll-picker@^1.2.1:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/react-native-camera-roll-picker/-/react-native-camera-roll-picker-1.2.3.tgz#b117fd3a2b9012dcccee1261a9bc427226b8d6d2"
+
+react-native-check-box@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-check-box/-/react-native-check-box-2.1.0.tgz#a4e5fa2c1860cfc3f5758ae3493b6ec2ec7c2878"
+  dependencies:
+    prop-types "^15.5.7"
 
 react-native-collapsible@^0.9.0:
   version "0.9.0"

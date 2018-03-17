@@ -21,7 +21,7 @@ import { colors, text } from "../../styles";
   },
   form: {
     width: "100%",
-    marginTop: 50
+    marginTop: 15
   }
 })
 class SignUp extends React.Component {

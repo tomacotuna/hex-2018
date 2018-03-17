@@ -3,9 +3,13 @@ import { reduxForm, Field } from "redux-form";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import moment from "moment";
 
-import MyTextInput from "./MyTextInput";
-import MyDateInput from "./MyDateInput";
-import MyRadioInput from "./MyRadioInput";
+import {
+  MyTextInput,
+  MyDateInput,
+  MyRadioInput,
+  MyCheckboxInput
+} from "./index";
+
 import Button from "../Button";
 import styles from "./MyForm.style";
 
@@ -73,6 +77,7 @@ function MyForm(props) {
         name={"email"}
         component={MyTextInput}
         placeholder={"Email"}
+        keyboardType={"email-address"}
       />
       <Field
         label="Password"
@@ -90,6 +95,7 @@ function MyForm(props) {
         placeholder="Phone Number"
         format={phoneFormatter}
         parse={phoneParser}
+        keyboardType={"phone-pad"}
       />
 
       <Field
@@ -107,6 +113,15 @@ function MyForm(props) {
       />
 
       <Field name={"dob"} component={MyDateInput} placeholder="Date of birth" />
+
+      <Field
+        name={"crisisAvailable"}
+        type="checkbox"
+        component={MyCheckboxInput}
+        label={
+          "I confirm that I am available to respond to crisis alerts via SMS."
+        }
+      />
 
       <Button
         title={"Register"}
