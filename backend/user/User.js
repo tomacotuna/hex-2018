@@ -2,18 +2,39 @@ var mongoose = require('mongoose');
 
 //TODO: add constraints
 var UserSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  password: String,
-  phone: String,
-  dob: String,
+  name: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  password:{
+    type: String,
+    required: true
+  },
+  phone: {
+    type: String,
+    required: true
+  },
+  dob: {
+    type: String,
+    required: true
+  },
   occupation: String,
-  gender: String,
+  gender: {
+    type: Boolean,
+    required: true
+  },
   interests: [String],
   organisations: [String],
   countries: [String],
   skills: [String],
-  crisisAvailable: Boolean,
+  crisisAvailable: {
+    type: Boolean,
+    required: true
+  }
 });
 mongoose.model('User', UserSchema);
 

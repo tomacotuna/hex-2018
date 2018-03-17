@@ -7,6 +7,7 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 var Organisation = require('./Organisation');
 var Post = require('../post/Post');
+
 //CREATES A NEW ORGANISATION
 router.post("/", function(req,res){
   Organisation.create({

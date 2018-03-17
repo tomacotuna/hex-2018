@@ -14,4 +14,7 @@ app.use('/api/org',OrganisationController);
 var PostController = require('./post/PostController');
 app.use('/api/post',PostController)
 
+var CrisisController = require('./crisis/CrisisController');
+app.use('/api/crisis', CrisisController);
+
 module.exports = app;
