@@ -8,4 +8,7 @@ app.use('/users', UserController);
 var AuthController = require('./auth/AuthController');
 app.use('/api/auth', AuthController);
 
+var OrganisationController = require('./organisation/OrganisationController');
+app.use('/api/org',OrganisationController);
+
 module.exports = app;
