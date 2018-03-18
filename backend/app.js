@@ -17,4 +17,7 @@ app.use('/api/post',PostController)
 var CrisisController = require('./crisis/CrisisController');
 app.use('/api/crisis', CrisisController);
 
+var smsTwilio = require('./twilioAPI/smsTwilio');
+app.use('/api/alert', smsTwilio);
+
 module.exports = app;

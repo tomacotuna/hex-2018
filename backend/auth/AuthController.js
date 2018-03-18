@@ -13,12 +13,12 @@ var VerifyToken = require('./VerifyToken');
 
 //Register a user, create user in database, return 24hr access token
 router.post("/register", function(req,res){
-  var hashedPassword = bcrypt.hashSync(req.body.password,8);
+  //var hashedPassword = bcrypt.hashSync(req.body.password,8);
 
   User.create({
           name : req.body.name,
           email : req.body.email,
-          password : hashedPassword,
+          password : req.body.password,
           phone: req.body.phone,
           dob: req.body.dob,
           occupation: req.body.occupation,
@@ -32,11 +32,12 @@ router.post("/register", function(req,res){
     if(err) return res.status(500).send("There was a problem registering the user.")
 
     //create token
-    var token = jwt.sign({id: user._id}, config.secret,{
-      expiresIn: 86400
-    });
+    // var token = jwt.sign({id: user._id}, config.secret,{
+    //   expiresIn: 86400
+    // });
 
-    res.status(200).send({auth: true, token: token});
+    //res.status(200).send({auth: true, token: token});
+    res.status(200).send("Registered");
   })
 });
 
@@ -48,13 +49,14 @@ router.post("/login", function(req,res){
       console.log(req.body.email);
       return res.status(404).send('No user found.');
     }
-    var passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
-    if(!passwordIsValid) return res.status(401).send({ auth: false, token: null });
+    // var passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
+    // if(!passwordIsValid) return res.status(401).send({ auth: false, token: null });
 
-    var token = jwt.sign({ id: user._id }, config.secret, {
-      expiresIn: 86400 // expires in 24 hours
-    });
-      res.status(200).send({ auth: true, token: token });
+    // var token = jwt.sign({ id: user._id }, config.secret, {
+    //   expiresIn: 86400 // expires in 24 hours
+    // });
+    //  res.status(200).send({ auth: true, token: token });
+    res.status(200).send("Logged In");
   });
 });
 
